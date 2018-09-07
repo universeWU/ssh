@@ -4,10 +4,19 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+    <constant name="struts.i18n.encoding" value="utf-8"></constant>
     <package name="default"namespace="/" extends="struts-default">
-<action name="sayHello"class="cap.action.HelloWorldAction"method="sayHi">
+        <!--/sayHi-->
+<action name="sayHello" class="cap.action.HelloWorldAction" method="sayHi">
     <result name="success">/result.jsp</result>
 </action>
-    </package>
 
+    </package>
+<package name="xxx" namespace="/xxx" extends="struts-default">
+<!--/xxx/sayHi-->
+    <action name="sayHello"class="cap.action.HelloWorldAction"method="sayHi">
+        <result name="success">/result.jsp</result>
+    </action>
+</package>
+    <include file="test.xml"/>
 </struts>
